@@ -6,12 +6,12 @@
     box-sizing: border-box;
   }
   body {
-    background-color: #f2f2f2;
+    background-color: white;
   }
   
   .head {
     max-width: 480px;
-    border: 2px solid #a6a6a6;
+    border: 10px solid black ;
     margin: auto;
     height: 150px;
     display: flex;
@@ -53,13 +53,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #a6a6a6;
+    border: 10px solid #121111;
     background-color: #f2f2f2;
     transform: rotateY(90deg);
   }
   
   .back {
-    background-color: #333;
+    background-color: #f20505;
   }
   
   img {
