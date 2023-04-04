@@ -72,3 +72,18 @@ img{
     width: 100px;
     height: 100px;
 }
+
+.flip
+{
+    transform: rotateY(0deg);
+}
+
+.match
+{
+    transform: rotateY(0deg);
+}
+
+.show
+{
+    transform: rotateY(0deg);
+}
