@@ -5,9 +5,9 @@ const score = document.querySelector('.score span')
 
 
 
-suffleImage()
+dealCards()
 clicking()
-function suffleImage(){
+function dealCards(){
 
 
     card.forEach(c=>{
@@ -34,9 +34,9 @@ function clicking(){
         card[i].addEventListener('click' ,()=>{
 
             front[i].classList.add('turn')
-           const filppedCard = document.querySelectorAll('.turn')
+           const lookCard= document.querySelectorAll('.turn')
 
-            if(filppedCard.length == 2){
+            if(lookCard.length == 2){
 
                 container.style.pointerEvents ='none'
                 
@@ -45,7 +45,7 @@ function clicking(){
                     container.style.pointerEvents ='all'
                 }, 1000);
  
-                match(filppedCard[0] , filppedCard[1])
+                pair(lookCard[0] , lookCard[1])
             }
         })
     }
@@ -54,7 +54,7 @@ function clicking(){
 
 
 
-function match(cardOne , cardTwo){
+function pair(cardOne , cardTwo){
 
     if(cardOne.dataset.index == cardTwo.dataset.index){
 
@@ -64,8 +64,8 @@ function match(cardOne , cardTwo){
         cardTwo.classList.remove('turn') 
 
 
-        cardOne.classList.add('match')
-        cardTwo.classList.add('match')
+        cardOne.classList.add('pair')
+        cardTwo.classList.add('pair')
 
 
     }else{
