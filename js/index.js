@@ -1,5 +1,5 @@
-const card = document.querySelectorAll('.cell')
-const front = document.querySelectorAll('.front')
+const card = document.querySelectorAll('.card')
+const front = document.querySelectorAll('.front-card')
 const container = document.querySelector('.container')
 const score = document.querySelector('.score span')
 
@@ -25,16 +25,16 @@ function clicking(){
     for(let i =0; i<card.length; i++){
 
 
-        front[i].classList.add('show')
+        front[i].classList.add('see')
 
         setInterval(() => {
-            front[i].classList.remove('show')
+            front[i].classList.remove('see')
         }, 2000);
 
         card[i].addEventListener('click' ,()=>{
 
-            front[i].classList.add('flip')
-           const filppedCard = document.querySelectorAll('.flip')
+            front[i].classList.add('turn')
+           const filppedCard = document.querySelectorAll('.turn')
 
             if(filppedCard.length == 2){
 
@@ -60,8 +60,8 @@ function match(cardOne , cardTwo){
 
         score.innerHTML = parseInt(score.innerHTML) + 1
        
-        cardOne.classList.remove('flip') 
-        cardTwo.classList.remove('flip') 
+        cardOne.classList.remove('turn') 
+        cardTwo.classList.remove('turn') 
 
 
         cardOne.classList.add('match')
@@ -72,8 +72,8 @@ function match(cardOne , cardTwo){
 
         setTimeout(() => {
             
-            cardOne.classList.remove('flip') 
-            cardTwo.classList.remove('flip') 
+            cardOne.classList.remove('turn') 
+            cardTwo.classList.remove('turn') 
         }, 1000);
     }
 }
