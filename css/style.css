@@ -8,7 +8,98 @@
   body {
     background-color: white;
   }
+  /* navigation styles start here*/
+  header{
+    background-color: #f20505;
+    text-align: center;
+    width: 100%;
+    font-family: 'Oxygrn', sans-serif;
+  }
+
+  .logo
+  {
+    padding: 5px;
+    font-size: 35px;
+  }
+  .nav-toggle
+  {
+    display: none;
+  }
+
+.nav-toggle-label
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 6%;
+  display: flex;
+  align-items: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after
+{
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after
+{
+  content: "";
+  position: absolute;
+}
+.nav-toggle-label span::before
+{
+  bottom: 7px;
+
+}
+.nav-toggle-label span::after
+{
+  top: 7px;
   
+}
+
+  nav{
+    text-align: left;
+    top: 100%;
+    left: 0;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 480ms ease-in-out;
+
+  }
+  nav ul{
+    list-style: none;
+  }
+  nav li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    opacity: 0;
+    
+  }
+  nav a:hover
+  {
+    color: black;
+  }
+
+  .nav-toggle:checked ~ nav
+  {
+    transform: scale(1,1);
+  }
+  .nav-toggle:checked ~ nav a{
+    opacity: 1;
+  }
   .title {
     max-width: 480px;
     margin: auto;
@@ -91,4 +182,42 @@
     .card div {
       height: 170px;
     }
+  }
+
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label
+    {
+      display: none;
+    }
+    header
+    {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px,3fr) 1fr;
+    }
+    .logo{
+      margin-top: 10px;
+      grid-column: 2 / 3;
+    }
+    nav{
+      all: unset;
+      grid-column: 3/4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    nav ul{
+      display: flex;
+      justify-content: center;
+      color: black;
+    }
+    nav li {
+      margin-left: 3em;
+      margin-top: 10px;
+    }
+    nav a {
+      opacity: 1;
+      position: relative;
+    }
+    
+      
   }
